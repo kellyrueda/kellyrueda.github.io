@@ -11,7 +11,7 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      if (e.target.closest('a')) { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
     });
   }
 
@@ -57,4 +57,16 @@
     if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0;
     if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1); x0 = null;
   });
+})();
+
+// submenu proyectos
+(function () {
+  var item = document.querySelector('.has-sub');
+  if (!item) return;
+  var b = item.querySelector('.sub-btn');
+  function set(open) { item.classList.toggle('open', open); b.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  b.addEventListener('click', function (e) { e.stopPropagation(); set(!item.classList.contains('open')); });
+  document.addEventListener('click', function (e) { if (!item.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && item.classList.contains('open')) { set(false); b.focus(); } });
+  item.addEventListener('focusout', function (e) { if (window.innerWidth > 820 && !item.contains(e.relatedTarget)) set(false); });
 })();
