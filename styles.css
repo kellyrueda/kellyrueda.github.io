@@ -24,8 +24,9 @@ a{color:inherit}
 .brand{font-family:var(--serif);font-size:26px;font-weight:500;text-decoration:none;line-height:1}
 .brand small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-weight:500}
 .top nav{display:contents}
-.nav{display:flex;gap:28px;list-style:none}
-.nav a{text-decoration:none;font-size:14px;color:var(--soft);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.nav{display:flex;align-items:center;gap:32px;list-style:none}
+.nav>li{display:flex;align-items:center}
+.nav a{text-decoration:none;font-family:var(--sans);font-size:14px;line-height:20px;color:var(--soft);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .nav a:hover,.nav a[aria-current]{color:var(--ink);border-color:var(--gold)}
 .menu-btn{display:none;background:none;border:0;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink);cursor:pointer}
 @media (max-width:820px){
@@ -179,7 +180,7 @@ footer a{color:var(--soft)}
 
 /* dropdown proyectos */
 .has-sub{position:relative}
-.sub-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:14px;color:var(--soft);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.sub-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-family:var(--sans);font-size:14px;line-height:20px;color:var(--soft);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .sub-btn .ic{width:15px;height:15px;transition:transform .25s}
 .sub-btn:hover,.sub-btn.cur,.has-sub.open .sub-btn{color:var(--ink);border-color:var(--gold)}
 .has-sub.open .sub-btn .ic{transform:rotate(180deg)}
@@ -221,3 +222,6 @@ footer a{color:var(--soft)}
 @media (max-width:900px){.arq-grid{grid-template-columns:1fr}.arq-photo{max-width:440px}}
 .arq-page .arq{min-height:calc(100svh - 72px);display:flex;align-items:center}
 .arq-page .arq-text .h2{font-size:clamp(40px,5vw,60px)}
+
+.sub-btn .ic{margin-top:1px}
+@media (max-width:820px){.nav>li{display:block}}
