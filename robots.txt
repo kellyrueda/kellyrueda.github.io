@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://kellyrueda.github.io/sitemap.xml
+Sitemap: https://kellyrueda.github.io/sitemap.txt
